@@ -1,5 +1,5 @@
 function updateCountdown() {
-  const birthday = new Date("2024-02-28T00:00:00Z");
+  const birthday = new Date("2024-02-28T00:00:00+08:00");
   const now = new Date();
   const timeDiff = birthday - now;
   const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
