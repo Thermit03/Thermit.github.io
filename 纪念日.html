@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>纪念日倒计时</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #3494E6, #EC6EAD);
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        h1 {
+            font-size: 48px;
+        }
+
+        .countdown {
+            font-size: 36px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>纪念日倒计时</h1>
+    <div id="countdown" class="countdown"></div>
+
+    <script>
+        function updateCountdown() {
+            const targetDate = new Date("2024-02-28T00:00:00Z");
+            const currentDate = new Date();
+            const timeRemaining = targetDate - currentDate;
+
+            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+            const milliseconds = timeRemaining % 1000;
+
+            document.getElementById("countdown").innerHTML = ${days} 天 ${hours} 小时 ${minutes} 分钟 ${seconds}.${milliseconds.toString().padStart(3, '0')} 秒;
+        }
+
+        setInterval(updateCountdown, 1);
+    </script>
+</body>
+
+</html>
