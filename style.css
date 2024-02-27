@@ -1,3 +1,18 @@
-body {
-  background: linear-gradient(to bottom right, blue, pink);
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom right, #00c6fb, #005bea);
+  background-size: cover;
+}
+
+.container {
+  text-align: center;
+  color: white;
+}
+
+.date-time {
+  font-size: 5em;
 }
